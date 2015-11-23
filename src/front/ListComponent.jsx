@@ -1,17 +1,17 @@
 import React from 'react';
 
+class ListItem extends React.Component {
+  render() {
+    return <li><div>{this.props.task.taskName}</div></li>;
+  }
+}
+
 export default class ListComponent extends React.Component {
   render() {
     return (
-        <ul class="list">
-          {this.props.tasks && this.props.tasks.map(task => {
-            return (
-              <li class="item">
-                <div className="task-name">{task}</div>
-              </li>
-            )
-          })}
-        </ul>
+      <ul>
+        {this.props.tasks.map((task, index) => <ListItem key={index} task={task}/>)}
+      </ul>
     );
   }
 }
