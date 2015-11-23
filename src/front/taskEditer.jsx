@@ -1,4 +1,5 @@
 import React from 'react';
+import request from 'superagent';
 import InputComponent from './InputComponent.jsx';
 import ListComponent from './ListComponent.jsx';
 
@@ -6,6 +7,16 @@ class TaskEditer extends React.Component {
   constructor() {
     super();
     this.state = {tasks: [], inputTaskName: ''};
+  }
+
+  componentDidMount() {
+    request
+      .get('/api/tasks/')
+      .send({ name: 'Manny', species: 'cat' })
+      .set('Accept', 'application/json')
+      .end((err, res) => {
+        this.setState({tasks: res.body.tasks});
+      });
   }
 
   handleClickAdd() {
