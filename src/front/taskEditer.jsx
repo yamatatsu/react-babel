@@ -5,11 +5,18 @@ import ListComponent from './ListComponent.jsx';
 class TaskEditer extends React.Component {
   constructor() {
     super();
-    this.state = {tasks: []};
+    this.state = {tasks: [], inputTaskName: ''};
   }
 
-  handleClickAdd(input) {
-    this.setState({tasks: this.state.tasks.concat({taskName: input.taskName})})
+  handleClickAdd() {
+    this.setState({
+      tasks: this.state.tasks.concat({taskName: this.state.inputTaskName.trim()}),
+      inputTaskName: ''
+    })
+  }
+
+  handleChangeTaskName(input) {
+    this.setState({inputTaskName: input.taskName})
   }
 
   render() {
@@ -17,7 +24,10 @@ class TaskEditer extends React.Component {
       <div>
         <header><h1>TaskEditer</h1></header>
         <section>
-          <InputComponent onClickAdd={this.handleClickAdd.bind(this)}/>
+          <InputComponent
+            inputTaskName={this.state.inputTaskName}
+            onClickAdd={this.handleClickAdd.bind(this)}
+            onChangeTaskName={this.handleChangeTaskName.bind(this)} />
         </section>
         <section>
           <ListComponent tasks={this.state.tasks}/>
