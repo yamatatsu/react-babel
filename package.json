@@ -17,8 +17,11 @@
     "webpack": "^1.12.1"
   },
   "scripts": {
-    "start": "webpack && supervisor ./index.js ",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./index.js ",
+    "test": "echo \"Error: no test specified\" && exit 1",
+
+    "start-dev": "supervisor ./index.js ",
+    "build": "webpack --progress --colors --watch"
   },
   "repository": {
     "type": "git",
