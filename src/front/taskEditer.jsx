@@ -1,4 +1,5 @@
 import React from 'react';
+import {reject} from 'underscore';
 import request from 'superagent';
 import InputComponent from './InputComponent.jsx';
 import ListComponent from './ListComponent.jsx';
@@ -12,7 +13,7 @@ class TaskEditer extends React.Component {
   componentDidMount() {
     request
       .get('/api/tasks/')
-      .set('Accept', 'application/json')
+      .set('Content-Type', 'application/json')
       .end((err, res) => {
         this.setState({tasks: res.body.tasks});
       });
@@ -22,11 +23,10 @@ class TaskEditer extends React.Component {
     request
       .post('/api/tasks/')
       .send({task_name: this.state.inputTaskName.trim()})
-      // .set('Accept', 'application/json')
       .set('Content-Type', 'application/json')
       .end((err, res) => {
         this.setState({
-          tasks: this.state.tasks.concat({task_name: res.body.task_name.trim()}),
+          tasks: this.state.tasks.concat(res.body.task),
           inputTaskName: ''
         });
       });
@@ -34,6 +34,17 @@ class TaskEditer extends React.Component {
 
   handleChangeTaskName(input) {
     this.setState({inputTaskName: input.task_name})
+  }
+
+  handleClickDelete(id) {
+    request
+      .del('/api/tasks/' + id)
+      .set('Content-Type', 'application/json')
+      .end((err, res) => {
+        this.setState({
+          tasks: reject(this.state.tasks, task => task._id === res.body._id)
+        });
+      });
   }
 
   render() {
@@ -47,7 +58,9 @@ class TaskEditer extends React.Component {
             onChangeTaskName={this.handleChangeTaskName.bind(this)} />
         </section>
         <section>
-          <ListComponent tasks={this.state.tasks}/>
+          <ListComponent
+            tasks={this.state.tasks}
+            onClickDelete={this.handleClickDelete.bind(this)}/>
         </section>
       </div>
     );
