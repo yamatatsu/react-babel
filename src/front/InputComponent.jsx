@@ -11,7 +11,7 @@ export default class InputComponent extends React.Component {
   }
 
   handleChangeTaskName(e) {
-    this.props.onChangeTaskName({taskName: e.target.value});
+    this.props.onChangeTaskName({task_name: e.target.value});
   }
 
   handleClickAdd() {

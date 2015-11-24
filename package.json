@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.14.1",
     "express": "^4.13.3",
+    "mongodb": "^2.0.49",
+    "morgan": "^1.6.1",
     "react": "^0.13.3",
     "superagent": "^1.4.0"
   },
@@ -19,7 +22,6 @@
   "scripts": {
     "start": "node ./index.js ",
     "test": "echo \"Error: no test specified\" && exit 1",
-
     "start-dev": "supervisor ./index.js ",
     "build": "webpack --progress --colors --watch"
   },

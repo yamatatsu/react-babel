@@ -2,7 +2,7 @@ import React from 'react';
 
 class ListItem extends React.Component {
   render() {
-    return <li><div>{this.props.task.taskName}</div></li>;
+    return <li><div>{this.props.task.task_name}</div></li>;
   }
 }
 

@@ -4,6 +4,7 @@ var path = require('path');
 module.exports = {
   entry: './src/front/main.js',
   output: { filename: './.build/public/js/bundle.js' },
+  devtool: 'source-map',
   module: {
     loaders: [
       {

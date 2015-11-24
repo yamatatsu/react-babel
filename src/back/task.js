@@ -1,13 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var taskDao = require('./dao/taskDao.js');
 
 router.get('/', function(req, res, next) {
-  res.json({
-    tasks: [
-      {taskName: 'チョッパー'},
-      {taskName: 'Dr.クレハ'}
-    ]
-  });
+  taskDao.find('test', {}, {}, list => res.json({tasks: list}));
 });
 
 router.get('/:id', function(req, res, next) {
@@ -18,9 +14,16 @@ router.get('/:id', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
   console.log(req.params);
-  res.json({
-    user: {userId: 3, userName: 'ラブーン'}
-  })
+  console.log(req.body);
+
+  var record = {task_name: req.params.task_name};
+
+  taskDao.insert(
+    'test',
+    record,
+    {},
+    result => res.send(result)
+  );
 });
 
 router.put('/:id', function(req, res, next) {

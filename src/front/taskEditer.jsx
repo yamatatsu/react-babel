@@ -12,7 +12,6 @@ class TaskEditer extends React.Component {
   componentDidMount() {
     request
       .get('/api/tasks/')
-      .send({ name: 'Manny', species: 'cat' })
       .set('Accept', 'application/json')
       .end((err, res) => {
         this.setState({tasks: res.body.tasks});
@@ -20,14 +19,21 @@ class TaskEditer extends React.Component {
   }
 
   handleClickAdd() {
-    this.setState({
-      tasks: this.state.tasks.concat({taskName: this.state.inputTaskName.trim()}),
-      inputTaskName: ''
-    })
+    request
+      .post('/api/tasks/')
+      .send({task_name: this.state.inputTaskName.trim()})
+      // .set('Accept', 'application/json')
+      .set('Content-Type', 'application/json')
+      .end((err, res) => {
+        this.setState({
+          tasks: this.state.tasks.concat({task_name: res.body.task_name.trim()}),
+          inputTaskName: ''
+        });
+      });
   }
 
   handleChangeTaskName(input) {
-    this.setState({inputTaskName: input.taskName})
+    this.setState({inputTaskName: input.task_name})
   }
 
   render() {
