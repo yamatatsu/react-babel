@@ -6,23 +6,12 @@ router.get('/', function(req, res, next) {
   taskDao.find('test', {}, {}, list => res.json({tasks: list}));
 });
 
-router.get('/:id', function(req, res, next) {
-  res.json({
-    user: {userId: 1, userName: 'チョッパー'}
-  });
-});
-
 router.post('/', function(req, res, next) {
-  console.log(req.params);
-  console.log(req.body);
-
-  var record = {task_name: req.params.task_name};
-
   taskDao.insert(
     'test',
-    record,
+    {task_name: req.body.task_name},
     {},
-    result => res.send(result)
+    result => res.send(result.ops[0])
   );
 });
 
