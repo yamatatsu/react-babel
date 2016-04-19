@@ -1,9 +1,8 @@
 var path = require('path');
-// var webpack = require('webpack');
 
 module.exports = {
   entry: './src/front/main.js',
-  output: { filename: './.build/public/js/bundle.js' },
+  output: { filename: './app/assets/javascripts/bundle.js' },
   devtool: 'source-map',
   module: {
     loaders: [
