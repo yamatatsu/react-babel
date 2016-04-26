@@ -1,0 +1,18 @@
+AllCops:
+  RunRailsCops: true
+AsciiComments:
+  Enabled: false
+LineLength:
+  Max: 128
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+Style/Documentation:
+  Enabled: false
+Style/RedundantSelf:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+TrailingComma:
+  EnforcedStyleForMultiline: comma
+Rails/TimeZone:
+    Enabled: false
