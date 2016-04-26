@@ -2,7 +2,7 @@ import React from 'react';
 
 class ListItem extends React.Component {
   handleClickDelete() {
-    this.props.onClickDelete(this.props.task._id);
+    this.props.onClickDelete(this.props.task.id);
   }
   render() {
     return (
@@ -23,7 +23,7 @@ export default class ListComponent extends React.Component {
         {this.props.tasks.map(task => {
           return (
             <ListItem
-              key={task._id}
+              key={task.id}
               task={task}
               onClickDelete={this.handleClickDelete.bind(this)}/>
           );
