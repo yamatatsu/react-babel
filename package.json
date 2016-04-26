@@ -21,10 +21,9 @@
     "webpack": "^1.12.1"
   },
   "scripts": {
-    "start": "node ./index.js ",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start-dev": "supervisor ./index.js ",
-    "build": "webpack --progress --colors --watch"
+    "start": "webpack --progress --colors --watch",
+    "test": "",
+    "build": ""
   },
   "repository": {
     "type": "git",

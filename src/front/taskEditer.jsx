@@ -67,4 +67,4 @@ class TaskEditer extends React.Component {
   }
 }
 
-React.render(<TaskEditer/>, document.getElementById('task-editer'));
+React.render(<TaskEditer/>, document.getElementById('react-root'));
