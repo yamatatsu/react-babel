@@ -12,7 +12,7 @@ Style/RedundantSelf:
   Enabled: false
 Style/ClassAndModuleChildren:
   Enabled: false
-TrailingComma:
+Style/TrailingComma:
   EnforcedStyleForMultiline: comma
 Rails/TimeZone:
     Enabled: false
