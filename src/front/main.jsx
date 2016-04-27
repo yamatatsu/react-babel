@@ -1,19 +1,54 @@
 import React from 'react';
-import {reject} from 'underscore';
-import request from 'superagent';
-import InputComponent from './InputComponent.jsx';
-import ListComponent from './ListComponent.jsx';
+import {Router, Route, Link, browserHistory} from 'react-router';
 
-class Main extends React.Component {
+import {} from 'lodash';
+
+class Home extends React.Component {
   render() {
     return (
       <div>
-        <a href="/person" >個人</a>
-        <br/>
-        <a href="/group" >グループ</a>
+        <h1>Home</h1>
+        <ul>
+          <li><Link to="/person" >個人</Link></li>
+          <li><Link to="/group" >グループ</Link></li>
+        </ul>
       </div>
     );
   }
 }
 
-React.render(<Main/>, document.getElementById('react-root'));
+class Person extends React.Component {
+  render() {
+    return (
+      <div>
+        <h2>個人</h2>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+        </ul>
+      </div>
+    );
+  }
+}
+
+class Group extends React.Component {
+  render() {
+    return (
+      <div>
+        <h2>グループ</h2>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+        </ul>
+      </div>
+    );
+  }
+}
+
+let router = (
+  <Router history={browserHistory}>
+    <Route path="/" component={Home} />
+    <Route path="/person" component={Person} />
+    <Route path="/group" component={Group} />
+  </Router>
+);
+
+React.render(router, document.getElementById('react-root'));
