@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  get "home" => "top#index"
+  root to: 'top#index'
+  get "*any" => "top#index"
 end
