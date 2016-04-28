@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  get "" => "top#index"
+  get "home" => "top#index"
 end
