@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import {Link} from 'react-router';
 import {Row, Col} from 'react-bootstrap';
 
@@ -14,10 +14,9 @@ let SideNav = ({sm, md}) => {
   );
 };
 
-let propTypes = React.PropTypes;
 SideNav.propTypes = {
-  sm: propTypes.number.isRequired,
-  md: propTypes.number.isRequired
+  sm: PropTypes.number.isRequired,
+  md: PropTypes.number.isRequired
 };
 
 export default SideNav;
