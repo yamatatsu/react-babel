@@ -40,6 +40,11 @@ const Group = () => {
   );
 }
 
+/**
+ * [画面の全容]
+ * @param  {[jsx]} {children} [子Routeのcomponentが入ってる]
+ * @return {[jsx]}            [jsx]
+ */
 const App = ({children}) => {
   return (
     <div>
@@ -56,6 +61,9 @@ const App = ({children}) => {
   );
 };
 
+/**
+ * [react-routerなrouter]
+ */
 const router = (
   <Router history={browserHistory}>
     <Route path="/" component={App}>
