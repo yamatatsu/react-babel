@@ -2,6 +2,7 @@ var path = require('path');
 
 module.exports = {
   entry: './src/front/main.jsx',
+  resolve: { root: [ path.resolve('./src/front') ] },
   output: { filename: './app/assets/javascripts/bundle.js' },
   devtool: 'source-map',
   module: {

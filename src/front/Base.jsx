@@ -2,8 +2,8 @@ import React from 'react';
 import {Link} from 'react-router';
 import {Grid, Row, Col} from 'react-bootstrap';
 
-import Header from './Header.jsx';
-import SideNav from './SideNav.jsx';
+import Header from 'Header.jsx';
+import SideNav from 'SideNav.jsx';
 
 /**
  * [画面の全容]

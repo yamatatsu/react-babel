@@ -2,10 +2,10 @@ import React from 'react';
 import {render} from 'react-dom';
 import {Router, Route, browserHistory} from 'react-router';
 
-import Base from './Base.jsx';
-import Home from './Home.jsx';
-import Person from './Person.jsx';
-import Group from './Group.jsx';
+import Base from 'Base.jsx';
+import Home from 'Home.jsx';
+import Person from 'Person.jsx';
+import Group from 'Group.jsx';
 
 /**
  * [react-routerなrouter]
