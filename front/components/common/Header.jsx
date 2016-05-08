@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import {Navbar, Nav, NavDropdown, MenuItem} from 'react-bootstrap';
 
-let Header = () => {
+const Header = () => {
   return (
     <Navbar fluid>
       <Navbar.Header>

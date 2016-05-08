@@ -2,7 +2,7 @@ import React, { PropTypes } from 'react';
 import {Link} from 'react-router';
 import {Row, Col} from 'react-bootstrap';
 
-let SideNav = ({sm, md}) => {
+const SideNav = ({sm, md}) => {
   return (
     <Col sm={sm} md={md}>
       <Row><Link to="home" >Home</Link></Row>
@@ -16,7 +16,7 @@ let SideNav = ({sm, md}) => {
 
 SideNav.propTypes = {
   sm: PropTypes.number.isRequired,
-  md: PropTypes.number.isRequired
+  md: PropTypes.number.isRequired,
 };
 
 export default SideNav;

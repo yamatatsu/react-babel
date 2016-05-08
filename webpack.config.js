@@ -2,7 +2,7 @@ var path = require('path');
 
 module.exports = {
   entry: './front/app.jsx',
-  resolve: { root: [ path.resolve('./front/components') ] },
+  resolve: { root: [ path.resolve('./front') ] },
   output: { filename: './app/assets/javascripts/bundle.js' },
   devtool: 'source-map',
   module: {
@@ -11,16 +11,14 @@ module.exports = {
         test: /\.js[x]?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
-        query: {
-          presets: ['es2015', 'react']
-        }
+        query: { presets: ['es2015', 'react'] },
       },
       { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.svg$/, loader: 'url-loader?mimetype=image/svg+xml' },
       { test: /\.woff$/, loader: 'url-loader?mimetype=application/font-woff' },
       { test: /\.woff2$/, loader: 'url-loader?mimetype=application/font-woff' },
       { test: /\.eot$/, loader: 'url-loader?mimetype=application/font-woff' },
-      { test: /\.ttf$/, loader: 'url-loader?mimetype=application/font-woff' }
-    ]
-  },
+      { test: /\.ttf$/, loader: 'url-loader?mimetype=application/font-woff' },
+    ],
+  },
 };

@@ -1,9 +1,8 @@
-import React from 'react';
-import {Link} from 'react-router';
+import React, { PropTypes }  from 'react';
 import {Grid, Row, Col} from 'react-bootstrap';
 
-import Header from 'common/Header.jsx';
-import SideNav from 'common/SideNav.jsx';
+import Header from './Header.jsx';
+import SideNav from './SideNav.jsx';
 
 /**
  * [画面の全容]
@@ -13,7 +12,7 @@ import SideNav from 'common/SideNav.jsx';
 const Base = ({children}) => {
   return (
     <div>
-      <Header/>
+      <Header />
       <Grid fluid>
         <Row>
           <SideNav sm={3} md={3} />
@@ -24,5 +23,8 @@ const Base = ({children}) => {
       </Grid>
     </div>
   );
+};
+Base.propTypes = {
+  children: PropTypes.object.isRequired,
 };
 export default Base;
