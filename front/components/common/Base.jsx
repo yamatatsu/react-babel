@@ -1,8 +1,8 @@
 import React, { PropTypes }  from 'react';
 import {Grid, Row, Col} from 'react-bootstrap';
 
-import Header from './Header.jsx';
-import SideNav from './SideNav.jsx';
+import Header from 'components/common/Header.jsx';
+import SideNav from 'components/common/SideNav.jsx';
 
 /**
  * [画面の全容]

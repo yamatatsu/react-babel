@@ -7,5 +7,6 @@ plugins:
   - import
 rules:
   semi: 0
+  import/no-unresolved: 0
 settings:
   import/resolver: webpack

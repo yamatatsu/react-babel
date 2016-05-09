@@ -5,14 +5,11 @@ import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { syncHistory, routeReducer } from 'redux-simple-router'
 
-import _ from 'lodash';
-
-import Base from './components/common/Base.jsx';
-import Home from './components/Home.jsx';
-import Person from './components/Person.jsx';
-import Group from './components/Group.jsx';
-
-const reducer = combineReducers(_.assign({}, { routing: routeReducer }));
+import reducer from 'reducers.js'
+import Base from 'components/common/Base.jsx';
+import Home from 'components/Home.jsx';
+import ShopList from 'components/ShopList.jsx';
+import Group from 'components/Group.jsx';
 
 // Sync dispatched route actions to the history
 const reduxRouterMiddleware = syncHistory(browserHistory)
