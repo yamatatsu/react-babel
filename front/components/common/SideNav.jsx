@@ -6,9 +6,9 @@ const SideNav = ({sm, md}) => {
   return (
     <Col sm={sm} md={md}>
       <Row><Link to="home" >Home</Link></Row>
-      <Row><Link to="person" >個人</Link></Row>
+      <Row><Link to="shopList" >店舗一覧</Link></Row>
       <Row><Link to="group" >グループ</Link></Row>
-      <Row><Link to="person" >って感じで、この辺がサイドナビ</Link></Row>
+      <Row><Link to="shopList" >って感じで、この辺がサイドナビ</Link></Row>
       <Row><Link to="group" >見た目の話は別で</Link></Row>
     </Col>
   );
